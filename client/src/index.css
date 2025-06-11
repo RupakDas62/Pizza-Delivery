@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* Add these to your CSS file */
+.pizza-gradient {
+  background: linear-gradient(120deg, #ff4e50 0%, #fc913a 100%);
+}
+.gradient-text {
+  background: linear-gradient(92deg, #fd746c 10%, #ff9068 65%, #ffb86c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.brand-font {
+  font-family: 'Pacifico', cursive;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.30);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(255, 77, 77, 0.08), 0 0.5px 1.5px 0 rgba(252, 145, 58, 0.11);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: box-shadow .25s, transform .18s;
+}
+.glass:hover {
+  box-shadow: 0 16px 48px 0 rgba(255, 77, 77, 0.18), 0 2px 8px 0 rgba(252, 145, 58, 0.15);
+  transform: translateY(-6px) scale(1.03) rotate(-1deg);
+}
+.cta-btn {
+  background: linear-gradient(90deg, #fd746c 0%, #ff9068 49%, #ffb86c 100%);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+.cta-btn:hover {
+  transform: scale(1.06) translateY(-2px);
+  background: linear-gradient(90deg, #ff9068 0%, #fd746c 100%);
+  box-shadow: 0 16px 36px 0 rgba(255, 77, 77, 0.16);
+}
+.glass-btn {
+  background: rgba(255,255,255,0.18);
+  border: 2px solid #fd746c;
+  color: #fd746c;
+  font-weight: 700;
+  backdrop-filter: blur(12px);
+}
+.glass-btn:hover {
+  background: rgba(253, 116, 108, 0.08);
+  color: #ff4e50;
+  transform: scale(1.04) translateY(-2px);
+}
+.pizza-topping {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  animation: floatTopping 6s infinite ease-in-out;
+}
+@keyframes floatTopping {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px) rotate(8deg); }
+}
+.hero-card {
+  animation: floatCard 9s ease-in-out infinite alternate;
+}
+@keyframes floatCard {
+  0%, 100% { transform: translateY(-6px) rotate(9deg); }
+  50% { transform: translateY(15px) rotate(12deg); }
+}
+.shadow-inset {
+  box-shadow: inset 0 2px 28px 0 rgba(255, 77, 77, 0.10);
+}
+@keyframes fade-in {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
