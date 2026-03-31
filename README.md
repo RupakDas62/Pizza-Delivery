@@ -66,7 +66,7 @@ pizza-delivery/
 ### 1. Clone Repository
 
 ```
-git clone <your-repo-link>
+git clone https://github.com/RupakDas62/Pizza-Delivery.git
 cd pizza-delivery
 ```
 
