@@ -42,11 +42,23 @@ const orderSchema = new mongoose.Schema({
     }
   },
   status: { type: String, default: 'Pending' },
-  paymentStatus: { type: String, default: 'Pending' }
+  paymentStatus: { type: String, default: 'Pending' },
+  
+  deliveryAgent: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: "DeliveryAgent",
+},
+deliveryLocation: {
+  type: { type: String, enum: ["Point"], default: "Point" },
+  coordinates: { type: [Number], default: [0, 0] }, // [lng, lat]
+},
+
+
 }, { timestamps: true });
 
 // ✅ Create a geospatial index for location
 orderSchema.index({ location: '2dsphere' });
 
 // ✅ Export the model
-module.exports = mongoose.model('Order', orderSchema);
+module.exports = mongoose.models.Order || mongoose.model("Order", orderSchema);
+
